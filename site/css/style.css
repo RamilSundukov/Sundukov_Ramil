@@ -1,0 +1,161 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.body{
+    background-image: url(../images/img/bg/main_bg.JPG);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+.header{
+    height: 15vh;
+    width: 100vw;
+}
+.header_logo{
+    margin-left: 1vw;
+    background-image: url(../images/logo/cycler_logo.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    float: left;
+    height: 15vh;
+    width: 15vh;
+}
+.mendeleev_logo{
+    margin-right: 1vw;
+    background-image: url(../images/logo/mendeleev_logo.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    float: right;
+    height: 15vh;
+    width: 15vh;
+}
+
+.photo{
+    margin-left: 1vw;
+    margin-right: 1vw;
+    float: left;
+    background-image: url(../images/img/photo/my_photo.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 85vh;
+    width: 32vw;
+}
+.text{
+    background: wheat;
+    float: left;
+    height: 85vh;
+    width: 66vw;
+}
+.name{
+    float: left;
+    height: 20vh;
+    width: 66vw;
+}
+.name_text{
+    color: black;
+    font-family: "Times New Roman";
+    font-size: calc(16px + 4vw);
+    font-weight: 600;
+    text-align: center;
+    line-height: 20vh;
+}
+.about-me, .about-course{
+    float: left;
+    height: 65vh;
+    width: 33vw;
+    padding: 5vh 5vw 5vw 5vh;
+}
+.about-me_text, .about-course_text{
+    color: black;
+    font-family: "Times New Roman";
+}
+.topic{
+    font-size: calc(9px + 3vw);
+    font-weight: 100;
+    text-align: center;
+    line-height: calc(16px + 3vw);
+}
+.just-text{
+    font-size: calc(8px + 2vw);
+    font-weight: 50;
+    text-align: justify;
+    line-height: calc(8px + 2vw);
+    text-indent: calc(8px + 2vw);
+}
+
+/*Таблица Менделеева*/
+
+.body_mendeleev{
+    background-image: url(../images/img/bg/mendeleev_bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+table, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+table{
+    margin: calc(100vh/8) auto ;
+}
+td{
+    animation-duration: 5s;
+    animation-name: animation;
+    width: 260px;
+    height: 140px;
+}
+.pink{
+    background: pink;
+}
+.yellow{
+    background: yellow;
+}
+.blue{
+    background: deepskyblue;
+}
+.symbol-element, .element-symbol, .number-mass-element, .element-number-mass, .name-element, .element-name{
+    float: left;
+    color: black;
+}
+.symbol-element, .number-element, .name-element, .element-symbol, .element-number, .element-name{
+    font-weight: bold;
+}
+.symbol-element, .element-number-mass, .name-element{
+    text-align: left;
+}
+.element-symbol, .number-mass-element ,.element-name{
+    text-align: right;
+}
+.symbol-element, .element-symbol{
+    width: 100px;
+    height: 90px;
+    font-size: 100px;
+    line-height:80px;
+}
+.number-mass-element, .element-number-mass{
+    height: 90px;
+    width: 160px;
+}
+.name-element, .element-name{
+    width: 260px;
+    height: 40px;
+}
+.number-mass-element, .element-number-mass, .name-element, .element-name{
+    font-size: 40px;
+    line-height: 40px;
+}
+@keyframes animation {
+    from {
+        background: black;
+    }
+    to {
+        background: white;
+    }
+}
