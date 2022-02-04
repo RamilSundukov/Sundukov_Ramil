@@ -5,157 +5,139 @@
 }
 .body{
     background-image: url(../images/img/bg/main_bg.JPG);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
     background-attachment: fixed;
 }
-.header{
+.body, .header_logo, .mendeleev_logo{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.header_logo,.mendeleev_logo{
     height: 15vh;
-    width: 100vw;
+    width: 15vh;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
 }
 .header_logo{
     margin-left: 1vw;
     background-image: url(../images/logo/cycler_logo.svg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    float: left;
-    height: 15vh;
-    width: 15vh;
 }
 .mendeleev_logo{
     margin-right: 1vw;
     background-image: url(../images/logo/mendeleev_logo.svg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    float: right;
-    height: 15vh;
-    width: 15vh;
 }
-
+.photo-text{
+    display: grid;
+    grid-template-columns: 34vw 33vw 33vw;
+    grid-template-rows: 20vh 65vh;
+}
 .photo{
+    grid-row-start: 1;
+    grid-row-end: 4;
     margin-left: 1vw;
     margin-right: 1vw;
-    float: left;
     background-image: url(../images/img/photo/my_photo.jpg);
-    background-size: contain;
+}
+.photo, .photo1-image, .photo2-image, .photo3-image, .photo4-image, .photo5-image, .photo6-image, .photo7-image, .photo8-image{
     background-repeat: no-repeat;
     background-position: center;
-    height: 85vh;
-    width: 32vw;
-}
-.text{
-    background: wheat;
-    float: left;
-    height: 85vh;
-    width: 66vw;
+    background-size: contain;
 }
 .name{
-    float: left;
-    height: 20vh;
-    width: 66vw;
-}
-.name_text{
+    background: white;
+    grid-column-start: 2;
+    grid-column-end: 4;
     color: black;
-    font-family: "Times New Roman";
-    font-size: calc(16px + 4vw);
-    font-weight: 600;
+    font-family: "Calibri";
+    font-size: calc((7vw + 7vh)/2);
     text-align: center;
+    font-weight: 600;
     line-height: 20vh;
+    border-radius: 50vw;
+    margin: 1vh 0;
 }
 .about-me, .about-course{
-    float: left;
-    height: 65vh;
-    width: 33vw;
-    padding: 5vh 5vw 5vw 5vh;
-}
-.about-me_text, .about-course_text{
+    margin: 0 1vw;
+    background: white;
     color: black;
-    font-family: "Times New Roman";
+    font-family: "Calibri";
+    padding: 3vh 3vw;
+    border-radius: 5vw;
 }
 .topic{
-    font-size: calc(9px + 3vw);
+    font-size: calc((3vw + 3vh)/2);
     font-weight: 100;
     text-align: center;
-    line-height: calc(16px + 3vw);
+    line-height: 3vh;
+    margin-bottom: 1vh;
 }
 .just-text{
-    font-size: calc(8px + 2vw);
+    font-size: calc((2vw + 2vh)/2);
     font-weight: 50;
-    text-align: justify;
-    line-height: calc(8px + 2vw);
-    text-indent: calc(8px + 2vw);
+    text-align: match-parent;
+    line-height: calc((2vw + 2vh)/2);
+    text-indent: calc((2vw + 2vh)/2);
 }
-
-/*Таблица Менделеева*/
-
-.body_mendeleev{
-    background-image: url(../images/img/bg/mendeleev_bg.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
+.flex-block{
+    background-color: white;
+    justify-content: space-evenly;
+    border-radius: 5vw;
+    margin: 1vh 1vw;
 }
-table, td{
-    border: 1px solid black;
-    border-collapse: collapse;
+.flex-block, .photo1, .photo2, .photo3, .photo4{
+    display: flex;
 }
-table{
-    margin: calc(100vh/8) auto ;
+.photo1, .photo2, .photo3, .photo4{
+    flex-direction: column;
+    flex-basis: 22vw;
 }
-td{
-    animation-duration: 5s;
-    animation-name: animation;
-    width: 260px;
-    height: 140px;
+.photo1-image, .photo2-image, .photo3-image, .photo4-image,.photo5-image, .photo6-image, .photo7-image, .photo8-image{
+    margin: 1vh 1vw;
+    flex-basis: calc((20vw + 20vh)/2);
+    border-radius: 10vw;
 }
-.pink{
-    background: pink;
+.photo1-text, .photo2-text, .photo3-text, .photo4-text,.photo5-text, .photo6-text, .photo7-text, .photo8-text{
+    flex-basis: calc((5vw + 5vh)/2);;
+    font-family: Calibri;
+    text-align: center;
+    font-size: calc((3vw + 3vh)/2);
+    line-height: calc((3vw + 3vh)/2);
 }
-.yellow{
-    background: yellow;
+.photo1-image{
+    background-image: url(../images/img/block-photo/road.JPG);
 }
-.blue{
-    background: deepskyblue;
+.photo2-image{
+    background-image: url(../images/img/block-photo/sunset.jpg);
 }
-.symbol-element, .element-symbol, .number-mass-element, .element-number-mass, .name-element, .element-name{
-    float: left;
-    color: black;
+.photo3-image{
+    background-image: url(../images/img/block-photo/feather-grass.jpg);
 }
-.symbol-element, .number-element, .name-element, .element-symbol, .element-number, .element-name{
-    font-weight: bold;
+.photo4-image{
+    background-image: url(../images/img/block-photo/river.JPG);
 }
-.symbol-element, .element-number-mass, .name-element{
-    text-align: left;
+.grid-block{
+    background-color: white;
+    display: grid;
+    grid-template-columns:50vw 50vw;
+    grid-template-rows: calc((25vw + 25vh)/2) calc((25vw + 25vh)/2);
+    margin: 1vh 1vw;
 }
-.element-symbol, .number-mass-element ,.element-name{
-    text-align: right;
+.photo5, .photo6, .photo7, .photo8{
+    display: grid;
+    grid-template-columns:50vw;
+    grid-template-rows: calc((20vw + 20vh)/2) calc((5vw + 5vh)/2);
 }
-.symbol-element, .element-symbol{
-    width: 100px;
-    height: 90px;
-    font-size: 100px;
-    line-height:80px;
+.photo5-image{
+    background-image: url(../images/img/block-photo/spruce.JPG);
 }
-.number-mass-element, .element-number-mass{
-    height: 90px;
-    width: 160px;
+.photo6-image{
+    background-image: url(../images/img/block-photo/rowan.JPG);
 }
-.name-element, .element-name{
-    width: 260px;
-    height: 40px;
+.photo7-image{
+    background-image: url(../images/img/block-photo/waxwing.JPG);
 }
-.number-mass-element, .element-number-mass, .name-element, .element-name{
-    font-size: 40px;
-    line-height: 40px;
-}
-@keyframes animation {
-    from {
-        background: black;
-    }
-    to {
-        background: white;
-    }
+.photo8-image{
+    background-image: url(../images/img/block-photo/larch.jpg);
 }
