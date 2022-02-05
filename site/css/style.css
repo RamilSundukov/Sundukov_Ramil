@@ -13,31 +13,32 @@
     background-size: cover;
 }
 .header_logo,.mendeleev_logo{
-    height: 15vh;
-    width: 15vh;
+    height: calc((15vw + 15vh)/2);
+    width: calc((15vw + 15vh)/2);
 }
 .header{
     display: flex;
     justify-content: space-between;
+    margin-bottom: 1vh;
 }
 .header_logo{
     margin-left: 1vw;
     background-image: url(../images/logo/cycler_logo.svg);
 }
-.mendeleev_logo{
+.mendeleev_logo {
     margin-right: 1vw;
     background-image: url(../images/logo/mendeleev_logo.svg);
 }
+
+/*Моё фото и текст*/
 .photo-text{
     display: grid;
-    grid-template-columns: 34vw 33vw 33vw;
-    grid-template-rows: 20vh 65vh;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 15vh 50vh;
 }
 .photo{
     grid-row-start: 1;
     grid-row-end: 4;
-    margin-left: 1vw;
-    margin-right: 1vw;
     background-image: url(../images/img/photo/my_photo.jpg);
 }
 .photo, .photo1-image, .photo2-image, .photo3-image, .photo4-image, .photo5-image, .photo6-image, .photo7-image, .photo8-image{
@@ -51,15 +52,13 @@
     grid-column-end: 4;
     color: black;
     font-family: "Calibri";
-    font-size: calc((7vw + 7vh)/2);
+    font-size: calc((6vw + 6vh)/2);
     text-align: center;
     font-weight: 600;
-    line-height: 20vh;
+    line-height: 15vh;
     border-radius: 50vw;
-    margin: 1vh 0;
 }
 .about-me, .about-course{
-    margin: 0 1vw;
     background: white;
     color: black;
     font-family: "Calibri";
@@ -80,6 +79,11 @@
     line-height: calc((2vw + 2vh)/2);
     text-indent: calc((2vw + 2vh)/2);
 }
+.photo-text, .name, .about-me, .about-course{
+    margin: 1vh 1vw;
+}
+
+/*Картинки в flexbox*/
 .flex-block{
     background-color: white;
     justify-content: space-evenly;
@@ -91,15 +95,15 @@
 }
 .photo1, .photo2, .photo3, .photo4{
     flex-direction: column;
-    flex-basis: 22vw;
+    flex-wrap: nowrap;
+    flex-basis: calc((22vw + 22vh)/2);
 }
 .photo1-image, .photo2-image, .photo3-image, .photo4-image,.photo5-image, .photo6-image, .photo7-image, .photo8-image{
-    margin: 1vh 1vw;
+    margin: 1vh 0;
     flex-basis: calc((20vw + 20vh)/2);
-    border-radius: 10vw;
 }
 .photo1-text, .photo2-text, .photo3-text, .photo4-text,.photo5-text, .photo6-text, .photo7-text, .photo8-text{
-    flex-basis: calc((5vw + 5vh)/2);;
+    flex-basis: calc((5vw + 5vh)/2);
     font-family: Calibri;
     text-align: center;
     font-size: calc((3vw + 3vh)/2);
@@ -117,16 +121,19 @@
 .photo4-image{
     background-image: url(../images/img/block-photo/river.JPG);
 }
+
+/*Картинки в grid*/
 .grid-block{
+    border-radius: 5vw;
     background-color: white;
     display: grid;
-    grid-template-columns:50vw 50vw;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: calc((25vw + 25vh)/2) calc((25vw + 25vh)/2);
     margin: 1vh 1vw;
 }
 .photo5, .photo6, .photo7, .photo8{
     display: grid;
-    grid-template-columns:50vw;
+    grid-template-columns: 1fr;
     grid-template-rows: calc((20vw + 20vh)/2) calc((5vw + 5vh)/2);
 }
 .photo5-image{
@@ -140,4 +147,68 @@
 }
 .photo8-image{
     background-image: url(../images/img/block-photo/larch.jpg);
+}
+
+/*Анимация - увеличение картинок*/
+.photo1, .photo2, .photo3, .photo4, .photo5, .photo6, .photo7, .photo8 {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.photo1:hover, .photo2:hover, .photo3:hover, .photo4:hover, .photo5:hover, .photo6:hover, .photo7:hover, .photo8:hover {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+/* стиль для планшета */
+@media screen and (min-width: 480px) and (max-width: 820px) {
+    .photo-text{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 50vh 15vh 30vh;
+    }
+    .photo{
+        margin: 1vh 1vw;
+        grid-row-start: 1;
+        grid-row-end: 1;
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    .name{
+        grid-column-start: 1;
+        grid-column-end: 5;
+    }
+    .flex-block{
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+    .photo1, .photo2, .photo3, .photo4{
+        flex-basis: 40vw;
+    }
+}
+
+/* стиль для телефона */
+@media screen and (min-width: 0px) and (max-width: 479px) {
+    .photo-text{
+        grid-template-rows: 50vh 15vh 20vh 20vh;
+    }
+    .photo{
+        grid-row-start: 1;
+        grid-row-end: 1;
+    }
+    .name{
+        grid-column-start: 1;
+        grid-column-end: 1;
+    }
+    .flex-block{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .photo1, .photo2, .photo3, .photo4{
+        flex-basis: 98vw;
+    }
+    .photo-text, .grid-block, .photo5, .photo6, .photo7, .photo8{
+        grid-template-columns: 1fr;
+    }
 }
