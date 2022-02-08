@@ -1,3 +1,9 @@
+<?
+    date_default_timezone_set('Asia/Yekaterinburg');
+    $time=date('H');
+    (($time >= 20 && $time < 24) || ($time >= 00 && $time < 8)) ?
+        $href="css/style-night.css" : $href="css/style.css";
+?>
 <!doctype html>
 <html lang="ru">
 <head>
@@ -6,12 +12,13 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Homework</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href=<?echo $href; ?>>
 </head>
 <body class="body">
     <section class="header">
-        <div class="header_logo"></div>
+        <a ><div class="header_logo"></div></a>
         <a href="mendeleev_logo.html"><div class="mendeleev_logo"></div></a>
+        <div class="time_logo"></div>
     </section>
     <section class="photo-text">
         <div class="photo"></div>

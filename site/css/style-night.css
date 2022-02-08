@@ -4,7 +4,8 @@
     padding: 0;
 }
 .body{
-    background-image: url(../images/img/bg/main_bg.JPG);
+    filter: invert(100%);
+    background-image: url(../images/img/bg/main_bg-night.jpg);
     background-attachment: fixed;
 }
 .body, .header_logo, .mendeleev_logo, .time_logo{
@@ -30,8 +31,9 @@
     background-image: url(../images/logo/mendeleev_logo.svg);
 }
 .time_logo{
+    filter: invert(100%);
     margin-right: 1vw;
-    background-image: url(../images/logo/sunny_logo.svg);
+    background-image: url(../images/logo/moon_logo.svg);
 }
 
 /*Моё фото и текст*/
@@ -41,11 +43,13 @@
     grid-template-rows: 15vh 50vh;
 }
 .photo{
+    filter: invert(100%);
     grid-row-start: 1;
     grid-row-end: 4;
     background-image: url(../images/img/photo/my_photo.jpg);
 }
 .photo, .photo1-image, .photo2-image, .photo3-image, .photo4-image, .photo5-image, .photo6-image, .photo7-image, .photo8-image{
+    filter: invert(100%);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -90,6 +94,7 @@
 /*Картинки в flexbox*/
 .flex-block{
     background-color: white;
+    color: black;
     justify-content: space-evenly;
     border-radius: 5vw;
     margin: 1vh 1vw;
@@ -130,6 +135,7 @@
 .grid-block{
     border-radius: 5vw;
     background-color: white;
+    color: black;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: calc((25vw + 25vh)/2) calc((25vw + 25vh)/2);
