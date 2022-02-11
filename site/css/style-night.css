@@ -8,31 +8,40 @@
     background-image: url(../images/img/bg/main_bg-night.jpg);
     background-attachment: fixed;
 }
-.body, .header_logo, .mendeleev_logo, .time_logo{
+/*Header*/
+.body, .header_logo, .mendeleev_logo, .time_logo, .cycle_logo{
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 }
-.header_logo, .mendeleev_logo, .time_logo{
-    height: calc((15vw + 15vh)/2);
-    width: calc((15vw + 15vh)/2);
+.header_logo, .mendeleev_logo, .time_logo, .cycle_logo{
+    height: calc((10vw + 10vh)/2);
+    width: calc((10vw + 10vh)/2);
 }
 .header{
     display: flex;
     justify-content: space-between;
-    margin-bottom: 1vh;
+    margin: 1vh 1vw;
+    background-color: white;
+    border-radius: 5vw;
+    align-items: center;
+    flex-wrap: wrap;
 }
 .header_logo{
-    margin-left: 1vw;
+    margin: 1vh 1vw 1vh 5vw;
     background-image: url(../images/logo/cycler_logo.svg);
 }
 .mendeleev_logo {
-    margin: 0 1vw;
+    margin: 1vh 1vw;
     background-image: url(../images/logo/mendeleev_logo.svg);
+}
+.cycle_logo {
+    margin: 1vh 1vw;
+    background-image: url(../images/logo/cycle_logo.svg);
 }
 .time_logo{
     filter: invert(100%);
-    margin-right: 1vw;
+    margin: 1vh 5vw 1vh 1vw;
     background-image: url(../images/logo/moon_logo.svg);
 }
 
@@ -159,6 +168,53 @@
     background-image: url(../images/img/block-photo/larch.jpg);
 }
 
+/*Footer*/
+.footer{
+    background-color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 25vh;
+    margin: 1vh 1vw;
+    border-radius: 5vw;
+}
+.footer_logo{
+    justify-items: center;
+}
+.footer_logo_img{
+    height: calc((3vw + 3vh)/2);
+    width: calc((3vw + 3vh)/2);
+}
+.footer_logo_name{
+    font-size: calc((3vw + 3vh)/2);
+    font-weight: 100;
+    line-height: 25vh;
+}
+.contacts{
+    display: grid;
+}
+.contacts_name{
+    font-size: calc((2.5vw + 2.5vh)/2);
+    font-weight: 50;
+    margin-bottom: 1vh;
+}
+.phone, .mail, .vk, .telegram, .instagram{
+    font-size: calc((2vw + 2vh)/2);
+    font-weight: 30;
+    color: black;
+}
+.vk_logo, .telegram_logo, .instagram_logo{
+    filter: invert(100%);
+    height: calc((2vw + 2vh)/2);
+    width: calc((2vw + 2vh)/2);
+    margin-right: 1vw;
+}
+.href{
+    text-decoration: none;
+}
+.footer_logo_name, .contacts_name, .phone, .mail, .vk, .telegram, .instagram{
+    text-align: center;
+}
+
 /*Анимация - увеличение картинок*/
 .photo1, .photo2, .photo3, .photo4, .photo5, .photo6, .photo7, .photo8 {
     -webkit-transition: all 0.3s ease;
@@ -200,6 +256,13 @@
 
 /* стиль для телефона */
 @media screen and (min-width: 0px) and (max-width: 479px) {
+    .header_logo, .mendeleev_logo, .time_logo, .cycle_logo{
+        height: calc((20vw + 20vh)/2);
+        width: calc((20vw + 20vh)/2);
+    }
+    .header_logo, .time_logo{
+        margin: 1vh 1vw;
+    }
     .photo-text{
         grid-template-rows: 50vh 15vh 20vh 20vh;
     }

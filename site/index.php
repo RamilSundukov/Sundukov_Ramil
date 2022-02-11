@@ -1,3 +1,4 @@
+<!--Определение стиля в зависимости от времени-->
 <?
     date_default_timezone_set('Asia/Yekaterinburg');
     $time=date('H');
@@ -12,19 +13,18 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Homework</title>
-    <link rel="stylesheet" type="text/css" href=<?echo $href; ?>>
+    <link rel="stylesheet" type="text/css" href=<? echo $href; ?>>
 </head>
 <body class="body">
-    <section class="header">
-        <a ><div class="header_logo"></div></a>
-        <a href="mendeleev_logo.html"><div class="mendeleev_logo"></div></a>
-        <div class="time_logo"></div>
-    </section>
+
+<!--Подключение header-->
+<?
+    require 'header.php';
+?>
+
     <section class="photo-text">
         <div class="photo"></div>
-        <div class="name">
-            Рамиль Сундуков
-        </div>
+        <div class="name">Рамиль Сундуков</div>
         <div class="about-me">
             <p class="topic">Информация о себе</p>
             <p class="just-text">Место учёбы: МГТУ им. Г.И. Носова, 5 курс</p>
@@ -72,5 +72,11 @@
             <div class="photo8-text">Лиственница</div>
         </section>
     </section>
+
+<!--Подключение footer-->
+<?
+require 'footer.php';
+?>
+
 </body>
 </html>

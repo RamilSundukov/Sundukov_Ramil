@@ -9,6 +9,12 @@
     <link rel="stylesheet" href="css/mendeleev.css">
 </head>
 <body class="body_mendeleev">
+
+<!--Подключение header-->
+<?
+    require 'header.php';
+?>
+
     <table>
         <tr>
             <td class="pink">
@@ -152,5 +158,11 @@
             </td>
         </tr>
     </table>
+
+<!--Подключение footer-->
+<?
+    require 'footer.php';
+?>
+
 </body>
 </html>
