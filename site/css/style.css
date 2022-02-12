@@ -163,6 +163,24 @@
     background-image: url(../images/img/block-photo/larch.jpg);
 }
 
+/*result*/
+.results{
+    display: grid;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 10vh;
+    margin: 1vh 1vw;
+    border-radius: 5vw;
+}
+.vowels, .word{
+    justify-items: center;
+    font-size: calc((2vw + 2vh)/2);
+    font-weight: 100;
+    line-height: 10vh;
+    text-align: center;
+}
+
 /*Footer*/
 .footer{
     background-color: white;
@@ -276,6 +294,9 @@
         flex-basis: 98vw;
     }
     .photo-text, .grid-block, .photo5, .photo6, .photo7, .photo8{
+        grid-template-columns: 1fr;
+    }
+    .results, .footer{
         grid-template-columns: 1fr;
     }
 }
