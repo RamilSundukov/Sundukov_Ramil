@@ -12,6 +12,7 @@
 
 <!--Подключение header-->
 <?
+    require 'time.php';
     require 'header.php';
 ?>
 

@@ -1,11 +1,9 @@
 <!--Определение стиля в зависимости от времени-->
 <?
+    require 'time.php';
     function style_time()
     {
-        date_default_timezone_set('Asia/Yekaterinburg');
-        $time = date('H');
-        (($time >= 20 && $time < 24) || ($time >= 00 && $time < 8)) ?
-            $href = "css/style-night.css" : $href = "css/style.css";
+        (time_d_n() == false) ? $href = "css/style-night.css" : $href = "css/style.css";
         return $href;
     }
 ?>
@@ -30,7 +28,7 @@
     function number_day()
     {
         $birthday = '20-05-1999';
-        $date = date("m-d-Y");
+        $date = date("d-m-Y");
         $count = intval((strtotime($date) - strtotime($birthday)) / (60 * 60 * 24));
         return $count;
     }
@@ -150,7 +148,7 @@
         </section>
     </section>
     <section class="results">
-        <div class="vowels"> <? echo "$strings[17] - " . vowels($strings) . '.'; ?> </div>
+        <div class="vowels"> <? echo "$strings[17] - "  . vowels($strings) .'.'; ?> </div>
         <div class="word"> <? echo "$strings[18] - " . words($strings) . '.' ; ?> </div>
     </section>
 

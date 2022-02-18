@@ -11,6 +11,7 @@
 <body>
 <!--Подключение header-->
 <?
+    require 'time.php';
     require 'header.php';
 ?>
     <fieldset>

@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" href=css/footer.css>
 <footer class="footer">
     <section class="footer_logo">
         <div class="footer_logo_name" ><img class="footer_logo_img" src="images/logo/cycler_logo.svg" alt="cycler_logo">Сундуков Р.И.</div>
