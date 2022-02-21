@@ -68,6 +68,14 @@
         return $words;
     }
 ?>
+<?
+    setcookie("color","",time() + 3600 * 24 * 7);
+    if($_SESSION['username']){
+
+    }
+    $_COOKIE['color'] = $_GET['color'];
+
+?>
 <!doctype html>
 <html lang="ru">
 <head>
