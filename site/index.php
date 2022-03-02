@@ -6,9 +6,9 @@
         (time_d_n() == false) ? $href = "css/style-night.css" : $href = "css/style.css";
         return $href;
     }
-?>
-<!--Функция для подсчета гласных на странице-->
-<?
+
+//Функция для подсчета гласных на странице
+
     $strings = [];
     $strings[17] = 'Количество гласных букв';
     $strings[18] = 'Количество слов';
@@ -22,9 +22,9 @@
             }
         return $number;
     }
-?>
-<!--Количество прожитых дней-->
-<?
+
+//Количество прожитых дней
+
     function number_day()
     {
         $birthday = '20-05-1999';
@@ -32,9 +32,9 @@
         $count = intval((strtotime($date) - strtotime($birthday)) / (60 * 60 * 24));
         return $count;
     }
-?>
-<!--Функция вывода информации о себе-->
-<?
+
+//Функция вывода информации о себе
+
     function about_me($str)
     {
         $arr_just_text1 = explode(':', $str);
@@ -42,9 +42,9 @@
         for ($i = 1; $i < count($arr_just_text1); $i++)
             echo $arr_just_text1[$i];
 }
-?>
-<!--Функция вывода информации о курсах-->
-<?
+
+//Функция вывода информации о курсах
+
     function about_course($str)
     {
         $arr_just_text2 = explode(' ', $str);
@@ -58,22 +58,15 @@
             $arr_i++;
         }
     }
-?>
-<!--Функция для подсчета слов на странице-->
-<?
+
+//Функция для подсчета слов на странице
+
     function words($strings)
     {
         foreach ($strings as $value)
             $words += str_word_count(iconv("UTF-8", "windows-1251", $value));
         return $words;
     }
-?>
-<?
-    setcookie("color","",time() + 3600 * 24 * 7);
-    if($_SESSION['username']){
-
-    }
-    $_COOKIE['color'] = $_GET['color'];
 
 ?>
 <!doctype html>
