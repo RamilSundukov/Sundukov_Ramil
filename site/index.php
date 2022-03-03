@@ -1,5 +1,5 @@
-<!--Определение стиля в зависимости от времени-->
 <?
+//Определение стиля в зависимости от времени
     require 'time.php';
     function style_time()
     {
@@ -38,7 +38,7 @@
     function about_me($str)
     {
         $arr_just_text1 = explode(':', $str);
-        echo "<font color='red'> $arr_just_text1[0]:</font>";
+        echo "<span class='about-me1'> $arr_just_text1[0]:</span>";
         for ($i = 1; $i < count($arr_just_text1); $i++)
             echo $arr_just_text1[$i];
 }
@@ -52,9 +52,9 @@
         foreach ($arr_just_text2 as $value)
         {
             if ($arr_i % 2 == 0)
-                echo "<font color='#008b8b'> $value </font>";
+                echo "<span class='about_course1'> $value </span>";
             else
-                echo "<font color='#8b008b'> $value </font>";
+                echo "<span class='about_course2'> $value </span>";
             $arr_i++;
         }
     }
@@ -72,21 +72,21 @@
 <!doctype html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Homework</title>
     <link rel="stylesheet" type="text/css" href=<? echo style_time() ?>>
 </head>
-<body class="body">
+<body>
 
 <!--Подключение header-->
 <?
     require 'header.php';
 ?>
 
-    <section class="photo-text">
+    <section class="photo-text" lang="ru">
         <div class="photo"></div>
         <div class="name"><? echo $strings[0] = 'Рамиль Сундуков'; ?></div>
         <div class="about-me">
@@ -112,7 +112,7 @@
             </p>
         </div>
     </section>
-    <section class="flex-block">
+    <section class="flex-block" lang="ru">
         <section class="photo1">
             <div class="photo1-image"></div>
             <div class="photo1-text"><? echo $strings[9] = 'Дорога'; ?></div>
@@ -130,7 +130,7 @@
             <div class="photo4-text"><? echo $strings[12] = 'Река'; ?></div>
         </section>
     </section>
-    <section class="grid-block">
+    <section class="grid-block" lang="ru">
         <section class="photo5">
             <div class="photo5-image"></div>
             <div class="photo5-text"><? echo $strings[13] = 'Ель'; ?></div>
@@ -148,7 +148,7 @@
             <div class="photo8-text"><? echo $strings[16] = 'Лиственница'; ?></div>
         </section>
     </section>
-    <section class="results">
+    <section class="results" lang="ru">
         <div class="vowels"> <? echo "$strings[17] - "  . vowels($strings) .'.'; ?> </div>
         <div class="word"> <? echo "$strings[18] - " . words($strings) . '.' ; ?> </div>
     </section>

@@ -1,116 +1,18 @@
-<!--Логины и пароли для входа-->
-<!--admin qwerty
-user1 qwerty1
-user2 qwerty2
-user3 qwerty3-->
 <?
-    //Функция подключения к базе
-    function db_con()
-    {
-        $hostname = 'localhost';
-        $username = 'Sundukov';
-        $password = 'qwerty';
-        $dbname = 'autorisation';
-        return mysqli_connect($hostname, $username, $password, $dbname);
-    }
-
-    $select=mysqli_query(db_con(), "SELECT * FROM `autorisation`");
+    //Логины и пароли для входа
+    //admin qwerty
+    //user1 qwerty1
+    //user2 qwerty2
+    //user3 qwerty3
+    require_once 'Connection.php';
+    $connect = new Connection('localhost', 'Sundukov','qwerty','autorisation');
     session_start();
-    $_SESSION['log_pas']=mysqli_fetch_all($select, MYSQLI_ASSOC);
-    $log_pas = $_SESSION['log_pas'];
-
-    //Функция авторизации
-    function autorisation($log_pas)
-    {
-        $_POST['password'] = md5($_POST['password']);
-        $flag = false;
-        foreach ($log_pas as $pair)
-        {
-            if (($pair['login'] == $_POST['login']) && ($pair['password'] == $_POST['password']) ){
-                $_SESSION['user'] = $_POST['login'];
-                $flag = true;
-            }
-        }
-        if ($_POST['login'] != '' && $_POST['password'] != '') {
-            if ($flag == true)
-                echo '<br>' . 'Успешная авторизация!';
-            else
-                echo '<br>' . 'Вы ввели неверный логин или пароль!';
-        }
-    }
-    //Функция регистрации
-    function registration($log_pas)
-    {
-        $_POST['password'] = md5($_POST['password']);
-        $flag = false;
-        foreach ($log_pas as $pair)
-        {
-            if ($pair['login'] == $_POST['login'])
-                $flag = true;
-        }
-        if ($_POST['login'] != '' && $_POST['password'] != '') {
-            if ($flag == true)
-                echo '<br>' . 'Такой логин уже занят!';
-            else {
-                $l = $_POST['login'];
-                $p = $_POST['password'];
-                mysqli_query(db_con(), "INSERT INTO `autorisation`(`login`, `password`, `site`, `color`) VALUES ('$l','$p','site','white')");
-                echo '<br>' . 'Успешная регистрация';
-            }
-        }
-    }
-    //Функция объединяет регистрацию и авторизацию
-    function aut_reg()
-    {
-        if($_POST['aut_reg'] == 1){
-            autorisation($_SESSION['log_pas']);
-            echo "<meta http-equiv='refresh' content='0'>";
-        }elseif($_POST['aut_reg'] == 2){
-            registration($_SESSION['log_pas']);;
-            echo "<meta http-equiv='refresh' content='0'>";
-        }elseif($_POST['aut_reg'] == 3){
-            echo '<br>' . ' ';
-            $_SESSION['user']='';
-            echo "<meta http-equiv='refresh' content='0'>";
-        }
-        $_POST['aut_reg'] = 0;
-    }
-    //Функция определения номера пользователя
-    function user($log_pas)
-    {
-        foreach ($log_pas as $pair) {
-            $i++;
-            if ($pair['login'] == $_SESSION['user'])
-                return $i - 1;
-        }
-    }
-    //Функция для вывода
-    function input($log_pas)
-    {   if ($_SESSION['user']!='')
-            echo '<br>' . $_SESSION['user'] . ' последний раз посетил: ' . $_SESSION['log_pas'][user($log_pas)]['site'];
-    }
-    //Определение перехода по ссылке
-    $login = $_SESSION['user'];
-    if ($_POST['site'] == 1) {
-        mysqli_query(db_con(), "UPDATE `autorisation` SET `site`='Факт' WHERE `login`='$login'");
-        $_POST['site'] = 0;
-        header("Location: fact.php");
-    }elseif ($_POST['site'] == 2){
-        mysqli_query(db_con(), "UPDATE `autorisation` SET `site`='Битрикс' WHERE `login`='$login'");
-        $_POST['site'] = 0;
-        header("Location: bitrix.php");
-    }
+    $connect->site();
+    $connect->color();
     //Удаление сессии
     if ($_POST['session'] == 1){
         session_destroy();
         $_POST['session'] = 0;
-        echo "<meta http-equiv='refresh' content='0'>";
-    }
-    //Определение цвета
-    if($_POST['button_color'] == 1){
-        $c=$_POST['color'];
-        mysqli_query(db_con(), "UPDATE `autorisation` SET `color`='$c' WHERE `login`='$login'");
-        $_POST['button_color'] = 0;
         echo "<meta http-equiv='refresh' content='0'>";
     }
 ?>
@@ -124,7 +26,7 @@ user3 qwerty3-->
     <title>Autorisation</title>
     <link rel="stylesheet" type="text/css" href="css/autorisation.css">
 </head>
-<body bgcolor="<? echo $_SESSION['log_pas'][user($log_pas)]['color'] ?>">
+<body bgcolor="<? echo $connect->bg_color() ?>">
 
     <!--Подключение header-->
     <?
@@ -179,7 +81,7 @@ user3 qwerty3-->
                 </p>
             </form>
         </div>
-        <div><? echo input($log_pas) . '<br>' . aut_reg() ?><p id="answer"></p></div>
+        <div><? echo $connect->input() . '<br>' . $connect->aut_reg() ?><p id="answer"></p></div>
     </fieldset>
 
     <?

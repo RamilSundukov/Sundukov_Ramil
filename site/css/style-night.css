@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
 }
-.body{
+body{
     filter: invert(100%);
     background-image: url(../images/img/bg/main_bg-night.jpg);
     background-attachment: fixed;
@@ -48,10 +48,18 @@
 }
 .about-me, .about-course{
     background: white;
-    color: black;
     font-family: "Calibri";
     padding: 3vh 3vw;
     border-radius: 5vw;
+}
+.about-me1{
+    color: red;
+}
+.about-course1{
+    color: deepskyblue;
+}
+.about-course2{
+    color: greenyellow;
 }
 .topic{
     font-size: calc((3vw + 3vh)/2);
